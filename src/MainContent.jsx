@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import jsPDF from "jspdf";
 
 class MainContent extends Component {
   state = {
     pageTitle: "Account Holders",
     holders: [],
+    file: null, // Add a file state
   };
 
   componentDidMount() {
@@ -15,7 +17,7 @@ class MainContent extends Component {
 
   fetchAccountHolders = () => {
     axios
-      .get("http://localhost:3001/holders") // Replace with your API endpoint
+      .get("http://localhost:3030/holders") // Replace with your API endpoint
       .then((response) => {
         this.setState({ holders: response.data });
       })
@@ -31,7 +33,7 @@ class MainContent extends Component {
 
     if (confirmDelete) {
       axios
-        .delete(`http://localhost:3001/account-holder/${id}`)
+        .delete(`http://localhost:3030/account-holder/${id}`)
         .then(() => {
           console.log(`Deleted holder with id ${id}`);
           // After deletion, fetch the updated account holders
@@ -43,6 +45,52 @@ class MainContent extends Component {
     } else {
       console.log("Deletion canceled by user");
     }
+  };
+
+  generatePDF = (holder) => {
+    const doc = new jsPDF();
+
+    // Add Heading
+    doc.setFontSize(18);
+    doc.text("Account Holder Report", 70, 10);
+
+    // Add Date
+    const currentDate = new Date().toLocaleDateString();
+    doc.setFontSize(12);
+    doc.text(`Date: ${currentDate}`, 70, 20);
+
+    // Add Account Holder Details
+    doc.setFontSize(12);
+    doc.text(`Account Holder Name: ${holder.accountHolderName}`, 10, 40);
+    doc.text(`Nominee Name: ${holder.nomineeName}`, 10, 50);
+    doc.text(`Account ID: ${holder.accountId}`, 10, 60);
+    doc.text(`Account Type: ${holder.bankAccountType}`, 10, 70);
+
+    doc.save(`account-holder-${holder.accountId}.pdf`);
+  };
+
+  handleFileUpload = (accountId) => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "application/pdf"; // Set the accepted file type if needed
+    fileInput.onchange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        // Send formData to the server using an HTTP request
+        axios
+          .post(`http://localhost:3030/bank/filesupload/${accountId}`, formData)
+          .then((response) => {
+            // Handle the response
+          })
+          .catch((error) => {
+            // Handle errors
+          });
+      }
+    };
+    fileInput.click();
   };
 
   renderHolderRows = (holders) => {
@@ -65,6 +113,22 @@ class MainContent extends Component {
               onClick={() => this.handleDelete(holder.accountId)}
             >
               Delete
+            </button>
+          </span>
+          <span className="ml-2">
+            <button
+              className="btn btn-success"
+              onClick={() => this.generatePDF(holder)}
+            >
+              Download
+            </button>
+          </span>
+          <span className="ml-2">
+            <button
+              className="btn btn-primary"
+              onClick={() => this.handleFileUpload(holder.accountId)}
+            >
+              Upload
             </button>
           </span>
         </td>

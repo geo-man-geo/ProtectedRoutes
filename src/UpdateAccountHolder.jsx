@@ -35,6 +35,7 @@ const UpdateAccountHoldercomp = () => {
         // Handle successful update
         console.log("Account holder updated:", response.data);
       })
+
       .catch((error) => {
         // Handle error
         console.log(error);
@@ -104,12 +105,21 @@ const UpdateAccountHoldercomp = () => {
               />
             </div>
             <div className="form-group form-row justify-content-center">
+              <button
+                type="submit"
+                className="btn btn-primary m-1 align-items-center"
+              >
+                Update
+              </button>
+            </div>
+
+            <div className="form-group form-row justify-content-center">
               <Link to="/maincontent">
                 <button
                   type="submit"
                   className="btn btn-primary m-1 align-items-center"
                 >
-                  Update
+                  Back to the maincontent
                 </button>
               </Link>
             </div>

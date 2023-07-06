@@ -17,10 +17,142 @@
     "name": "typicode"
   },
   "register": {
-    "email": "jnnjn",
-    "password": "drctc"
+    "username": "sfd",
+    "password": "sf"
   },
   "holders": [
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
+    {
+      "accountHolderName": "John Doe",
+      "nomineeName": "Jane Smith",
+      "accountId": "A123456",
+      "bankAccountType": "Savings Account"
+    },
     {
       "accountHolderName": "John Doe",
       "nomineeName": "Jane Smith",
@@ -29,8 +161,8 @@
     }
   ],
   "login": {
-    "username": "sdf",
-    "password": "sdf"
+    "username": "d",
+    "password": "dd"
   },
   "add-account-holder": {
     "accountHolderName": "hiuh",
@@ -40,8 +172,8 @@
   },
   "account-holder": {
     "accountHolderName": "sdf",
-    "nomineeName": "sdfsd",
-    "bankAccountType": "sdf",
+    "nomineeName": "s",
+    "bankAccountType": "dd",
     "accountId": "A123456"
   }
 }

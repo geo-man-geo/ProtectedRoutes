@@ -5,5 +5,9 @@ import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/umd/popper";
 import App from "./App";
 import "./index.css";
+import {render} from "react-dom";
 
-ReactDOM.render (<App/>, document.getElementById("root"));
+import {createRoot} from "react-dom";
+
+
+render (<App/>, document.getElementById("root"));

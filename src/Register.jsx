@@ -6,16 +6,16 @@ import axios from "axios";
 class Register extends Component {
   constructor(props) {
     super(props);
-    this.state = { email: "", password: "", message: "" };
+    this.state = { username: "", password: "", message: "" };
   }
 
   handleRegister = () => {
-    const { email, password } = this.state;
+    const { username, password } = this.state;
 
     // Make the POST request to register API
     axios
       .post("http://localhost:3001/register", {
-        email,
+        username,
         password,
       })
       .then((response) => {
@@ -42,9 +42,9 @@ class Register extends Component {
                 type="text"
                 className="form-control col-lg-4  placeholder-transparent text-center"
                 placeholder="Enter your username"
-                value={this.state.email}
+                value={this.state.username}
                 onChange={(event) => {
-                  this.setState({ email: event.target.value });
+                  this.setState({ username: event.target.value });
                 }}
               />
             </div>

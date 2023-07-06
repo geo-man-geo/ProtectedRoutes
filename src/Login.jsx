@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "./AuthContext"; // Import the useAuth hook
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); // Access the login function from the AuthContext
 
   const handleLogin = () => {
     if (username.trim() === "" || password.trim() === "") {
@@ -15,20 +17,20 @@ const Login = () => {
     }
 
     axios
-      .post("http://localhost:3001/login", { username, password })
+      .post("http://localhost:3030/login", { username, password })
       .then((response) => {
         console.log("Login successful");
-        if (response.status === 201) {
-          // Navigate to MainContent component upon successful login
+        // const { isLoggedIn } = response.data; // Assuming the API response contains a 'isLoggedIn' field
+        const isLoggedIn = true;
+        if (isLoggedIn) {
+          login(); // Call the login function from the AuthContext
           navigate("/maincontent");
         } else {
-          // Display error message for unsuccessful login
           setMessage("Login failed");
         }
       })
       .catch((error) => {
         console.error("Login failed", error);
-        // Display error message for failed login
         setMessage("Login failed");
       });
   };
